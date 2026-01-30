@@ -5,7 +5,7 @@ title: Documentation Hub
 
 # 📖 Documentation Hub
 
-**Luminous Digital Projects**
+**Growthverse Projects**
 
 ![Documentation](https://img.shields.io/badge/Status-Active-brightgreen) ![Version](https://img.shields.io/badge/Version-1.0-blue) ![Last Updated](https://img.shields.io/badge/Updated-January%202026-orange)
 
@@ -13,7 +13,7 @@ title: Documentation Hub
 
 ## Welcome
 
-Welcome to the central documentation hub for all Luminous Digital projects. Each project has its own dedicated folder containing comprehensive documentation including business requirements, technical designs, and implementation guides.
+Welcome to the central documentation hub for all Growthverse projects. Each project has its own dedicated folder containing comprehensive documentation including business requirements, technical designs, and implementation guides.
 
 ---
 
@@ -89,7 +89,7 @@ docs/
 
 ## 👥 Organization
 
-**Luminous Digital**
+**Growthverse**
 
 | Contact | Role |
 |---------|------|
@@ -108,6 +108,6 @@ When adding new project documentation:
 
 ---
 
-**Luminous Digital Documentation Hub** | *Organized. Comprehensive. Accessible.*
+**Growthverse Documentation Hub** | *Organized. Comprehensive. Accessible.*
 
 ![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red)

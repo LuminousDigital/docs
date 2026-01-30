@@ -90,20 +90,14 @@ A payment gateway built specifically for Nigeria, designed to help businesses ac
 
 ### altpay Offers:
 
-```text
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                 │
-│   🚀 EASY SETUP          💰 LOW FEES           ⚡ FAST MONEY    │
-│   Integrate in           1.5% per              Next-day        │
-│   minutes, not weeks     transaction           settlement      │
-│                          (max ₦2,000)                          │
-│                                                                 │
-│   🔒 SECURE              📊 CLEAR INSIGHTS     🤝 GREAT SUPPORT│
-│   Bank-level             Real-time             Dedicated       │
-│   security               dashboard             support team    │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Benefit | Description |
+|---------|-------------|
+| 🚀 **Easy Setup** | Integrate in minutes, not weeks |
+| 💰 **Low Fees** | 1.5% per transaction (max ₦2,000) |
+| ⚡ **Fast Money** | Next-day settlement |
+| 🔒 **Secure** | Bank-level security |
+| 📊 **Clear Insights** | Real-time dashboard |
+| 🤝 **Great Support** | Dedicated support team |
 
 ### Competitive Advantage:
 
@@ -532,16 +526,6 @@ quadrantChart
 ✅ **Competitive advantage** – Better pricing, faster settlements, superior developer experience
 
 ✅ **Realistic timeline** – Phased approach reduces risk
-
----
-
-<div align="center">
-
-## Ready to Build the Future of Payments in Nigeria? 🚀
-
-**Contact:** Balogun Abdulsamad | Engineering Team Lead
-
-</div>
 
 ---
 
