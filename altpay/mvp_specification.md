@@ -915,4 +915,7 @@ gantt
 
 ---
 
-*End of MVP Specification Document*
+<div style="display: flex; justify-content: space-between; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #333;">
+  <span><a href="./technical_design">← Technical Design</a></span>
+  <span><a href="./stakeholder_overview">Stakeholder Overview →</a></span>
+</div>

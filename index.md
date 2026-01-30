@@ -108,6 +108,6 @@ When adding new project documentation:
 
 ---
 
-**Growthverse Documentation Hub** | *Organized. Comprehensive. Accessible.*
-
-![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red)
+<div style="display: flex; justify-content: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #333;">
+  <span><a href="./altpay/">Enter altpay Documentation →</a></span>
+</div>

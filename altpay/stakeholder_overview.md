@@ -530,4 +530,7 @@ quadrantChart
 
 ---
 
-*Document Version 1.0 | January 30, 2026*
+<div style="display: flex; justify-content: space-between; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #333;">
+  <span><a href="./mvp_specification">← MVP Specification</a></span>
+  <span><a href="./technical_overview">Technical Overview →</a></span>
+</div>

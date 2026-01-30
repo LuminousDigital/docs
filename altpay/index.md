@@ -73,4 +73,7 @@ Welcome to the altpay documentation hub. This folder contains all technical and 
 
 ---
 
-*altpay Documentation v1.0* | [← Back to Main Documentation](../)
+<div style="display: flex; justify-content: space-between; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #333;">
+  <span><a href="../">← Documentation Hub</a></span>
+  <span><a href="./business_requirements">Business Requirements →</a></span>
+</div>

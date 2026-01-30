@@ -441,4 +441,7 @@ All code requires review before merge:
 
 ---
 
-*Document Version 1.0 | January 30, 2026*
+<div style="display: flex; justify-content: space-between; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #333;">
+  <span><a href="./stakeholder_overview">← Stakeholder Overview</a></span>
+  <span><a href="./">altpay Index →</a></span>
+</div>
