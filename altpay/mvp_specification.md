@@ -9,6 +9,7 @@ title: MVP Specification
 ---
 
 ## Document Information
+
 | Field | Details |
 |-------|---------|
 | **Project Name** | altpay Payment Gateway |

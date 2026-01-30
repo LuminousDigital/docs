@@ -21,6 +21,7 @@ title: Stakeholder Overview
 ---
 
 ## Document Information
+
 | Field | Details |
 |-------|---------|
 | **Project Name** | altpay Payment Gateway |
