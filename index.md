@@ -87,6 +87,21 @@ docs/
 
 ---
 
+## 👥 Organization
+
+**Growthverse**
+
+| Name | Role |
+|------|------|
+| Ajijola Habeeb | CEO |
+| Balogun Abdulsamad | Engineering Team Lead |
+| Innie Akpan | Project Manager |
+| Abiodun Prosper | Fullstack Developer |
+| Usman | Mobile Developer |
+| Kelvin | Frontend Developer Intern |
+
+---
+
 ## 📝 Contributing
 
 When adding new project documentation:
