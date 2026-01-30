@@ -98,6 +98,7 @@ docs/
 | Innie Akpan | Project Manager |
 | Abiodun Prosper | Fullstack Developer |
 | Usman | Mobile Developer |
+| Haleemah | UI Designer |
 | Kelvin | Frontend Developer Intern |
 
 ---
