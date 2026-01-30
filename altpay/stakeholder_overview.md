@@ -48,7 +48,7 @@
 
 **altpay is a payment gateway** – a technology platform that allows Nigerian businesses to accept payments from their customers online.
 
-Think of it like **Stripe** (the American payment company valued at $50 billion) but built specifically for Nigeria.
+A payment gateway built specifically for Nigeria, designed to help businesses accept payments easily and securely.
 
 ### In Simple Terms:
 > When a customer buys something online from a Nigerian business, altpay handles the payment – securely taking money from the customer's card and depositing it into the business's bank account.
@@ -509,7 +509,7 @@ quadrantChart
 
 | Question | Answer |
 |----------|--------|
-| **What are we building?** | Payment gateway for Nigerian businesses (like Stripe) |
+| **What are we building?** | Payment gateway for Nigerian businesses |
 | **How long will it take?** | 2 months to MVP, 5 months to full launch |
 | **How much will it cost?** | ₦35 million total |
 | **When will we make money?** | Break-even by Month 4-5 |

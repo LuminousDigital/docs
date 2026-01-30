@@ -81,7 +81,7 @@ E-commerce platforms including:
 - Webhooks for real-time event notifications
 - Test/Sandbox environment for development
 - API documentation and SDKs (PHP, JavaScript, Python)
-- Publishable and Secret API keys (Stripe-like)
+- Publishable and Secret API keys
 
 ### 3.2 Coming Soon Features
 

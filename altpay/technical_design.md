@@ -746,7 +746,7 @@ GET /api/v1/payments?status=succeeded&created[gte]=1704067200&email=customer@exa
 
 ### 6.1 PCI DSS Level 1 Compliance
 
-As a payment service provider similar to Stripe, altpay must achieve **PCI DSS Level 1 compliance** (highest level).
+As a payment service provider, altpay must achieve **PCI DSS Level 1 compliance** (highest level).
 
 | Requirement | Implementation | Status |
 |-------------|----------------|--------|
@@ -799,9 +799,9 @@ flowchart TB
     end
 ```
 
-### 6.3 Card Tokenization (Stripe-like Vault)
+### 6.3 Card Tokenization (Card Vault)
 
-altpay implements a **card vault** similar to Stripe's tokenization:
+altpay implements a **card vault** for secure tokenization:
 
 ```mermaid
 sequenceDiagram
@@ -872,7 +872,7 @@ X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
 ```
 
-### 6.11 Idempotency (Stripe-like)
+### 6.11 Idempotency
 
 All mutating API endpoints support **idempotency keys** to safely retry requests:
 
@@ -960,7 +960,7 @@ flowchart TB
     SEG --> GRAFANA["Grafana<br/>(Metrics)"]
 ```
 
-### 7.6 Webhook System (Stripe-like)
+### 7.6 Webhook System
 
 altpay implements a robust webhook system for real-time event notifications:
 
@@ -1079,7 +1079,7 @@ altpay provides official SDKs for easy integration:
 <script>
 const altpay = Altpay('pk_live_xxxxxxxxxx');
 
-// Create payment element (similar to Stripe Elements)
+// Create payment element
 const elements = altpay.elements();
 const cardElement = elements.create('card', {
     style: {

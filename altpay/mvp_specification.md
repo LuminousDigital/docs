@@ -36,7 +36,7 @@
 ## 1. Executive Summary
 
 ### 1.1 Purpose
-This document defines the Minimum Viable Product (MVP) scope for altpay, a Stripe-like payment gateway for Nigerian businesses. The MVP focuses on delivering core payment functionality within a **2-month timeline**.
+This document defines the Minimum Viable Product (MVP) scope for altpay, a payment gateway for Nigerian businesses. The MVP focuses on delivering core payment functionality within a **2-month timeline**.
 
 ### 1.2 MVP Goal
 Launch a functional payment gateway that enables:
