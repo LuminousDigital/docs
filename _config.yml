@@ -6,6 +6,11 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    default_lang: text
+  hard_wrap: false
+
+highlighter: rouge
 
 plugins:
   - jekyll-relative-links

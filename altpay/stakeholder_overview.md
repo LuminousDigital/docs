@@ -90,7 +90,7 @@ A payment gateway built specifically for Nigeria, designed to help businesses ac
 
 ### altpay Offers:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
 │   🚀 EASY SETUP          💰 LOW FEES           ⚡ FAST MONEY    │
@@ -171,16 +171,16 @@ flowchart TB
     subgraph "Customer"
         C[Customer's Bank Account]
     end
-    
+
     subgraph "altpay"
         AP[altpay Platform]
         FEE[altpay Fee: 1.5%<br/>max ₦2,000]
     end
-    
+
     subgraph "Merchant"
         M[Merchant's Bank Account]
     end
-    
+
     C -->|₦10,000| AP
     AP -->|Deduct Fee| FEE
     AP -->|₦9,850<br/>Next Day| M
@@ -229,17 +229,17 @@ flowchart TB
         W[Website/App]
         CP[Checkout Page]
     end
-    
+
     subgraph "Behind the Scenes"
         API[altpay System]
         DB[(Transaction<br/>Records)]
     end
-    
+
     subgraph "Banking Partners"
         IS[Card Processor<br/>Interswitch]
         BK[Banks]
     end
-    
+
     W --> CP
     CP --> API
     API --> DB
@@ -278,22 +278,22 @@ graph TB
     subgraph "Leadership"
         TL[🎯 Tech Lead<br/>Balogun Abdulsamad<br/>Architecture & Decisions]
     end
-    
+
     subgraph "Design"
         UI[🎨 UI Designer<br/>User Experience & Interfaces]
     end
-    
+
     subgraph "Development"
         BE1[👨‍💻 Backend Dev 1<br/>Payment Processing]
         BE2[👨‍💻 Backend Dev 2<br/>Settlements & Webhooks]
         FE1[👩‍💻 Frontend Dev 1<br/>Dashboard]
         FE2[👩‍💻 Frontend Dev 2<br/>Checkout & Website]
     end
-    
+
     subgraph "Quality"
         QA[🔍 QA Engineer<br/>Testing & Quality]
     end
-    
+
     TL --> UI
     TL --> BE1
     TL --> BE2
@@ -323,18 +323,18 @@ graph TB
 gantt
     title altpay Project Timeline
     dateFormat  YYYY-MM-DD
-    
+
     section MVP Phase
     Foundation & Setup       :a1, 2026-02-03, 14d
     Core Payments            :a2, after a1, 14d
     Security & Webhooks      :a3, after a2, 14d
     Settlement & Launch      :a4, after a3, 14d
     🚀 MVP Launch            :milestone, after a4, 0d
-    
+
     section Growth Phase
     Payment Links & Refunds  :b1, after a4, 21d
     Bank Transfers           :b2, after b1, 21d
-    
+
     section Scale Phase
     Subscriptions            :c1, after b2, 21d
     Advanced Features        :c2, after c1, 21d

@@ -1,8 +1,3 @@
----
-layout: default
-title: Technical Design Document
----
-
 # Technical Design Document (TDD)
 ## altpay - Nigerian Payment Gateway
 
@@ -192,7 +187,7 @@ Given the 5-person team size, we adopt a **Modular Monolith** approach - organiz
 ### 3.5 DevOps & CI/CD
 
 | Component | Technology | Purpose |
-|-----------|------------|---------|
+|-----------|------------|---------|  
 | **Version Control** | GitHub | Code repository |
 | **CI/CD** | GitHub Actions | Automated pipelines |
 | **Deployment** | Laravel Forge / Envoyer | Zero-downtime deployments |
@@ -204,7 +199,7 @@ Given the 5-person team size, we adopt a **Modular Monolith** approach - organiz
 ### 3.6 Analytics & Observability
 
 | Component | Technology | Purpose |
-|-----------|------------|---------|
+|-----------|------------|---------|  
 | **Error Tracking** | Sentry | Real-time error monitoring, stack traces, releases |
 | **Metrics & Dashboards** | Grafana + Prometheus | Custom dashboards, system metrics, alerts |
 | **Product Analytics** | PostHog | User behavior, funnels, feature flags, session replay |
@@ -790,13 +785,13 @@ flowchart TB
         DEK2["DEK - PII Data"]
         DEK3["DEK - API Secrets"]
         DEK4["DEK - Webhook Secrets"]
-
+        
         CMK --> DEK1
         CMK --> DEK2
         CMK --> DEK3
         CMK --> DEK4
     end
-
+    
     subgraph POLICY["Key Policies"]
         ROT["Key Rotation: Every 90 days (automatic)"]
         ACC["Key Access: IAM roles with least privilege"]
@@ -1035,15 +1030,15 @@ sequenceDiagram
 
     Note over AP: 1. Generate Signature
     AP->>AP: signature = HMAC-SHA256<br/>(webhook_secret, payload + timestamp)
-
+    
     Note over AP,MR: 2. Send Webhook with Headers
     AP->>WH: POST /webhook
     WH->>MR: altpay-Signature: t=1738252800,v1=5257a869...
-
+    
     Note over MR: 3. Merchant Verification
     MR->>MR: Check timestamp within 5 minutes<br/>(replay attack prevention)
     MR->>MR: Verify signature matches<br/>computed value
-
+    
     MR-->>WH: HTTP 200 OK
 ```
 
@@ -1100,9 +1095,9 @@ cardElement.mount('#card-element');
 const form = document.getElementById('payment-form');
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
+    
     const { token, error } = await altpay.createToken(cardElement);
-
+    
     if (error) {
         console.error(error.message);
     } else {
@@ -1133,10 +1128,10 @@ try {
             'order_id' => 'ORD-123',
         ],
     ]);
-
+    
     // Redirect to checkout
     header('Location: ' . $payment->authorization_url);
-
+    
 } catch (ApiException $e) {
     // Handle error
     echo $e->getMessage();
@@ -1172,36 +1167,36 @@ flowchart TB
                 NAT1["NAT GW"]
                 ALB1["ALB"]
             end
-
+            
             subgraph PUB2["Public Subnet (10.0.2.0/24)"]
                 NAT2["NAT GW"]
                 ALB2["ALB"]
             end
-
+            
             subgraph PRIV1["Private Subnet (10.0.3.0/24)"]
                 EKS1["EKS Nodes<br/>(K8s)"]
             end
-
+            
             subgraph PRIV2["Private Subnet (10.0.4.0/24)"]
                 EKS2["EKS Nodes<br/>(K8s)"]
             end
-
+            
             subgraph DB1["Database Subnet (10.0.5.0/24)"]
                 RDS1["RDS Primary"]
                 REDIS1["ElastiCache<br/>(Redis)"]
             end
-
+            
             subgraph DB2["Database Subnet (10.0.6.0/24)"]
                 RDS2["RDS Standby"]
                 REDIS2["ElastiCache<br/>(Redis)"]
             end
         end
-
+        
         CF["CloudFront<br/>(CDN)"]
         R53["Route 53<br/>(DNS)"]
         S3["S3<br/>(Static)"]
     end
-
+    
     R53 --> CF
     CF --> ALB1 & ALB2
     ALB1 --> EKS1
@@ -1252,14 +1247,14 @@ flowchart LR
         BLD --> TEST["Test"]
         TEST --> SEC["Security Scan"]
     end
-
+    
     subgraph DEPLOY["Deploy Stage"]
         SEC --> IMG["Build Image"]
         IMG --> QA["QA Deploy"]
         QA --> STG["Staging Deploy"]
         STG --> PROD["Prod Deploy"]
     end
-
+    
     subgraph ENV["Environments"]
         direction TB
         E1["Development: Auto-deploy on PR merge to develop"]
@@ -1468,12 +1463,12 @@ gantt
 ```mermaid
 flowchart TB
     TL["Tech Lead<br/>(Architecture, DevOps, Security)"]
-
+    
     TL --> UI["UI Designer<br/>UX & Interface Design"]
     TL --> BE["Backend Team<br/>2 Laravel Engineers"]
     TL --> FE["Frontend Team<br/>2 Next.js Engineers"]
     TL --> QA["QA Team<br/>1 QA Engineer"]
-
+    
     UI -.->|Design Specs| FE
 ```
 
@@ -1538,26 +1533,26 @@ flowchart LR
         FB["Feature Branch"] --> PR["PR Review"]
         PR --> DEV_MERGE["Merge to Develop"]
     end
-
+    
     subgraph QA_ENV["QA"]
         DEV_MERGE --> QA_DEPLOY["QA Deploy"]
         QA_DEPLOY --> QA_TEST["QA Testing"]
         QA_TEST --> APPROVAL["Approval"]
     end
-
+    
     subgraph STAGING["Staging"]
         APPROVAL --> REL["Release Branch"]
         REL --> STG_DEPLOY["Staging Deploy"]
         STG_DEPLOY --> UAT["UAT"]
         UAT --> SIGNOFF["Sign-off"]
     end
-
+    
     subgraph PROD["Production"]
         SIGNOFF --> PROD_DEPLOY["Production Deploy"]
         PROD_DEPLOY --> SMOKE["Smoke Tests"]
         SMOKE --> MONITOR["Monitor"]
     end
-
+    
     subgraph ROLLBACK["If Issues"]
         MONITOR -.-> ROLL["Rollback"]
         ROLL -.-> HOTFIX["Hotfix"]
@@ -1578,7 +1573,7 @@ flowchart LR
 ### 13.1 Monitoring Stack
 
 | Component | Tool | Purpose |
-|-----------|------|---------|
+|-----------|------|---------|  
 | **Error Tracking** | Sentry | Exception monitoring, stack traces, release tracking |
 | **Metrics & Dashboards** | Grafana + Prometheus | System metrics, custom dashboards, alerting |
 | **Product Analytics** | PostHog | User behavior, conversion funnels, feature flags |

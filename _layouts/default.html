@@ -40,18 +40,22 @@
       width: 100%;
       display: table;
       overflow-x: auto;
+      margin: 16px 0;
+      border: 1px solid #30363d;
     }
     
     .markdown-body table th,
     .markdown-body table td {
       border: 1px solid #30363d;
-      padding: 8px 12px;
+      padding: 10px 14px;
       text-align: left;
+      vertical-align: top;
     }
     
     .markdown-body table th {
       background-color: #161b22;
       font-weight: 600;
+      color: #c9d1d9;
     }
     
     .markdown-body table tr:nth-child(even) {
@@ -62,10 +66,23 @@
       background-color: #0d1117;
     }
 
+    .markdown-body table tr:hover {
+      background-color: #1f2428;
+    }
+
     /* Responsive table wrapper */
     .markdown-body .table-wrapper {
       overflow-x: auto;
       margin: 16px 0;
+    }
+
+    /* Ensure tables don't break layout */
+    @media (max-width: 767px) {
+      .markdown-body table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
     }
     
     .markdown-body code {
@@ -110,37 +127,78 @@
   <!-- Mermaid.js for diagram rendering -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
-    // Convert code blocks with mermaid class to mermaid divs
     document.addEventListener('DOMContentLoaded', function() {
-      // Find all code blocks that contain mermaid diagrams
-      const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre > code');
+      // Find all code blocks that are explicitly marked as mermaid
+      // Kramdown with rouge outputs: <pre><code class="language-mermaid">
+      const mermaidBlocks = document.querySelectorAll(
+        'pre > code.language-mermaid, ' +
+        'pre.language-mermaid > code, ' +
+        'code.language-mermaid, ' +
+        '.language-mermaid, ' +
+        '.highlight-mermaid, ' +
+        'pre.mermaid'
+      );
       
-      codeBlocks.forEach(function(codeBlock) {
-        const content = codeBlock.textContent.trim();
-        // Check if it's a mermaid diagram
-        if (codeBlock.classList.contains('language-mermaid') || 
-            content.startsWith('graph ') || 
-            content.startsWith('flowchart ') || 
-            content.startsWith('sequenceDiagram') ||
-            content.startsWith('classDiagram') ||
-            content.startsWith('stateDiagram') ||
-            content.startsWith('erDiagram') ||
-            content.startsWith('gantt') ||
-            content.startsWith('pie') ||
-            content.startsWith('journey')) {
-          
-          const pre = codeBlock.parentElement;
+      console.log('Found mermaid blocks:', mermaidBlocks.length);
+      
+      mermaidBlocks.forEach(function(codeBlock) {
+        const content = codeBlock.textContent || codeBlock.innerText || '';
+        const trimmedContent = content.trim();
+        
+        // Get the pre element
+        const pre = codeBlock.tagName === 'PRE' ? codeBlock : codeBlock.closest('pre') || codeBlock.parentElement;
+        
+        if (pre && trimmedContent) {
           const div = document.createElement('div');
           div.className = 'mermaid';
-          div.textContent = content;
+          div.textContent = trimmedContent;
           pre.parentNode.replaceChild(div, pre);
         }
       });
 
-      // Initialize mermaid after converting code blocks
+      // Fallback: Also detect by content for code blocks without language class
+      // This helps when kramdown doesn't add the class properly
+      const mermaidPatterns = [
+        /^graph\s+(TB|BT|LR|RL|TD)/,
+        /^flowchart\s+(TB|BT|LR|RL|TD)/,
+        /^sequenceDiagram/,
+        /^classDiagram/,
+        /^stateDiagram/,
+        /^erDiagram/,
+        /^gantt/,
+        /^pie\s/,
+        /^journey/,
+        /^gitgraph/
+      ];
+
+      function isMermaidContent(content) {
+        const trimmed = content.trim();
+        return mermaidPatterns.some(pattern => pattern.test(trimmed));
+      }
+
+      const allCodeBlocks = document.querySelectorAll('pre > code');
+      allCodeBlocks.forEach(function(code) {
+        // Skip if already processed or has other language class
+        if (code.classList.contains('language-mermaid')) return;
+        if (code.className && code.className.includes('language-') && !code.className.includes('language-mermaid')) return;
+        
+        const content = code.textContent || code.innerText || '';
+        const trimmedContent = content.trim();
+        
+        if (isMermaidContent(trimmedContent)) {
+          const pre = code.parentElement;
+          const div = document.createElement('div');
+          div.className = 'mermaid';
+          div.textContent = trimmedContent;
+          pre.parentNode.replaceChild(div, pre);
+        }
+      });
+
+      // Initialize mermaid
       mermaid.initialize({
-        startOnLoad: true,
+        startOnLoad: false,
         theme: 'dark',
+        securityLevel: 'loose',
         themeVariables: {
           primaryColor: '#238636',
           primaryTextColor: '#c9d1d9',
@@ -151,11 +209,21 @@
           background: '#0d1117',
           mainBkg: '#161b22',
           secondBkg: '#0d1117',
-          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif'
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif',
+          noteBkgColor: '#161b22',
+          noteTextColor: '#c9d1d9',
+          noteBorderColor: '#30363d',
+          actorBkg: '#161b22',
+          actorBorder: '#30363d',
+          actorTextColor: '#c9d1d9',
+          actorLineColor: '#8b949e',
+          signalColor: '#c9d1d9',
+          signalTextColor: '#c9d1d9'
         },
         flowchart: {
           htmlLabels: true,
-          curve: 'basis'
+          curve: 'basis',
+          useMaxWidth: true
         },
         sequence: {
           diagramMarginX: 50,
@@ -166,7 +234,8 @@
           boxMargin: 10,
           boxTextMargin: 5,
           noteMargin: 10,
-          messageMargin: 35
+          messageMargin: 35,
+          useMaxWidth: true
         },
         gantt: {
           titleTopMargin: 25,
@@ -175,12 +244,23 @@
           topPadding: 50,
           leftPadding: 75,
           gridLineStartPadding: 35,
-          fontSize: 11
+          fontSize: 11,
+          useMaxWidth: true
+        },
+        er: {
+          useMaxWidth: true
         }
       });
 
-      // Re-run mermaid to render the converted divs
-      mermaid.run();
+      // Run mermaid on all .mermaid divs
+      const mermaidDivs = document.querySelectorAll('.mermaid');
+      console.log('Rendering mermaid divs:', mermaidDivs.length);
+      
+      if (mermaidDivs.length > 0) {
+        mermaid.run({
+          querySelector: '.mermaid'
+        });
+      }
     });
   </script>
 </body>

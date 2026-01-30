@@ -192,7 +192,7 @@ altpay and bold by alt simplify business incorporation in Nigeria and offer corp
 
 ### 7.1 Sitemap Structure
 
-```
+```text
 altpay
 ├── Home
 │   ├── Hero Section
