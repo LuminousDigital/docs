@@ -899,15 +899,7 @@ gantt
 | Production | `altpay.ng` | Live environment |
 | API Docs | `docs.altpay.ng` | Developer documentation |
 
-### 14.2 Key Contacts
-
-| Role | Name | Responsibility |
-|------|------|----------------|
-| Engineering Lead | Balogun Abdulsamad | Technical decisions, architecture |
-| Product Owner | TBD | Requirements, priorities |
-| QA Lead | TBD | Quality assurance |
-
-### 14.3 Document History
+### 14.2 Document History
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|

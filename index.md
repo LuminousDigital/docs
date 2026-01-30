@@ -31,7 +31,7 @@ A secure, reliable payment gateway that enables Nigerian businesses to accept ca
 
 | Status | Timeline | Team |
 |--------|----------|------|
-| 🟢 Active Development | 5 months | 7 members |
+| 🟠 Planning | 5 months | 7 members |
 
 **[View Documentation →](./altpay/)**
 
@@ -83,17 +83,7 @@ docs/
 
 | Project | Status | Stack | Team | Launch |
 |---------|--------|-------|------|--------|
-| [altpay](./altpay/) | 🟢 Active | Next.js + Laravel | 7 | Mar 2026 |
-
----
-
-## 👥 Organization
-
-**Growthverse**
-
-| Contact | Role |
-|---------|------|
-| Balogun Abdulsamad | Engineering Team Lead |
+| [altpay](./altpay/) | 🟠 Planning | Next.js + Laravel | 7 | Mar 2026 |
 
 ---
 
@@ -108,6 +98,4 @@ When adding new project documentation:
 
 ---
 
-<div style="display: flex; justify-content: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #333;">
-  <span><a href="./altpay/">Enter altpay Documentation →</a></span>
-</div>
+**Growthverse Documentation Hub** | *Organized. Comprehensive. Accessible.*
