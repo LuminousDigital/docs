@@ -1,0 +1,23 @@
+theme: jekyll-theme-minimal
+title: Documentation Hub
+description: Luminous Digital Projects Documentation
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
+
+include:
+  - _layouts
+
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore

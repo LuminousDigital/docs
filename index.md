@@ -1,16 +1,13 @@
-<div align="center">
+---
+layout: default
+title: Documentation Hub
+---
 
 # 📖 Documentation Hub
 
-### Luminous Digital Projects
+**Luminous Digital Projects**
 
----
-
-![Documentation](https://img.shields.io/badge/Status-Active-brightgreen)
-![Version](https://img.shields.io/badge/Version-1.0-blue)
-![Last Updated](https://img.shields.io/badge/Updated-January%202026-orange)
-
-</div>
+![Documentation](https://img.shields.io/badge/Status-Active-brightgreen) ![Version](https://img.shields.io/badge/Version-1.0-blue) ![Last Updated](https://img.shields.io/badge/Updated-January%202026-orange)
 
 ---
 
@@ -24,16 +21,9 @@ Welcome to the central documentation hub for all Luminous Digital projects. Each
 
 ### Active Projects
 
-<table>
-<tr>
-<td width="80" align="center">
+---
 
-### 🏦
-
-</td>
-<td>
-
-#### [altpay](./altpay/index.md)
+#### 🏦 [altpay](./altpay/)
 
 **Payment Gateway for Nigerian Businesses**
 
@@ -43,11 +33,7 @@ A secure, reliable payment gateway that enables Nigerian businesses to accept ca
 |--------|----------|------|
 | 🟢 Active Development | 5 months | 7 members |
 
-**[View Documentation →](./altpay/index.md)**
-
-</td>
-</tr>
-</table>
+**[View Documentation →](./altpay/)**
 
 ---
 
@@ -97,7 +83,7 @@ docs/
 
 | Project | Status | Stack | Team | Launch |
 |---------|--------|-------|------|--------|
-| [altpay](./altpay/index.md) | 🟢 Active | Next.js + Laravel | 7 | Mar 2026 |
+| [altpay](./altpay/) | 🟢 Active | Next.js + Laravel | 7 | Mar 2026 |
 
 ---
 
@@ -122,16 +108,6 @@ When adding new project documentation:
 
 ---
 
-<div align="center">
-
----
-
-**Luminous Digital Documentation Hub**
-
-*Organized. Comprehensive. Accessible.*
-
----
+**Luminous Digital Documentation Hub** | *Organized. Comprehensive. Accessible.*
 
 ![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red)
-
-</div>

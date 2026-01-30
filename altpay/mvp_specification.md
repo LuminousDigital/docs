@@ -1,3 +1,8 @@
+---
+layout: default
+title: MVP Specification
+---
+
 # MVP Specification Document
 ## altpay - Nigerian Payment Gateway
 

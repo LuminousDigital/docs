@@ -1,3 +1,8 @@
+---
+layout: default
+title: Technical Overview
+---
+
 # altpay Technical Overview
 ## Internal Technical Documentation
 

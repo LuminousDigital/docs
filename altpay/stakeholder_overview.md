@@ -1,3 +1,8 @@
+---
+layout: default
+title: Stakeholder Overview
+---
+
 # altpay Project Overview
 ## Executive Summary for Stakeholders
 

@@ -1,3 +1,8 @@
+---
+layout: default
+title: Technical Design Document
+---
+
 # Technical Design Document (TDD)
 ## altpay - Nigerian Payment Gateway
 

@@ -1,3 +1,8 @@
+---
+layout: default
+title: Business Requirements
+---
+
 # Business Requirements Document (BRD)
 ## altpay - Nigerian Payment Gateway
 
