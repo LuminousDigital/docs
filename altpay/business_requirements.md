@@ -145,6 +145,7 @@ E-commerce platforms including:
 - Merchant receives settlement next business day
 
 ### 4.3 Integration Options
+
 | Option | Description | Best For |
 |--------|-------------|----------|
 | **Redirect Checkout** | Customer redirected to altpay-hosted page | Quick setup, minimal coding |
@@ -265,6 +266,7 @@ Home | Why altpay | Products | Developers | Pricing | Testimonials | Support
 **Target Statement**: Whether you're a startup, SME, or scaling enterprise, altpay helps you get paid without delays.
 
 #### Key Benefits
+
 | Benefit | Description |
 |---------|-------------|
 | **Affordable pricing** | 1.5% per transaction, capped at ₦2,000. No hidden fees. |
@@ -330,6 +332,7 @@ Home | Why altpay | Products | Developers | Pricing | Testimonials | Support
 - Ensure the platform is high-performing, secure, and discoverable by Nigerian merchants
 
 #### Requirements
+
 | Requirement | Details |
 |-------------|---------|
 | **Performance & Mobile-First** | Optimize for speed to support "clean, modern design" and ensure site is fully responsive for SMEs who manage businesses via mobile |
@@ -346,6 +349,7 @@ Home | Why altpay | Products | Developers | Pricing | Testimonials | Support
 - Use business registration and learning resources to attract and convert unregistered merchants
 
 #### Requirements
+
 | Requirement | Details |
 |-------------|---------|
 | **Strategic Blog Integration** | Build a blog within a subfolder (e.g., /blog) to host guides and insights mentioned in learning resources |
@@ -360,6 +364,7 @@ Home | Why altpay | Products | Developers | Pricing | Testimonials | Support
 - Rank for technical keywords to attract developers and establish local trust in the Nigerian market
 
 #### Requirements
+
 | Requirement | Details |
 |-------------|---------|
 | **Indexable Developer Portal** | Ensure "APIs & SDKs" and "Integration Guides" are in text-based format that search engines can crawl |
@@ -446,6 +451,7 @@ Home | Why altpay | Products | Developers | Pricing | Testimonials | Support
 ## 15. Non-Functional Requirements
 
 ### 15.1 Performance
+
 | Requirement | Target |
 |-------------|--------|
 | Page load time | < 3 seconds |
@@ -455,6 +461,7 @@ Home | Why altpay | Products | Developers | Pricing | Testimonials | Support
 | Mobile-first design | 100% responsive |
 
 ### 15.2 Security
+
 | Requirement | Standard |
 |-------------|----------|
 | **PCI DSS** | Level 1 compliance (highest) |
@@ -467,6 +474,7 @@ Home | Why altpay | Products | Developers | Pricing | Testimonials | Support
 | **Audit Logging** | All transactions and admin actions logged |
 
 ### 15.3 Availability & Reliability
+
 | Requirement | Target |
 |-------------|--------|
 | Uptime SLA | 99.9% |
@@ -476,6 +484,7 @@ Home | Why altpay | Products | Developers | Pricing | Testimonials | Support
 | Data backup | Continuous with 7-year retention |
 
 ### 15.4 Compliance & Regulatory
+
 | Requirement | Details |
 |-------------|---------|
 | **CBN Guidelines** | Central Bank of Nigeria payment regulations |
@@ -488,6 +497,7 @@ Home | Why altpay | Products | Developers | Pricing | Testimonials | Support
 ## 16. Appendix
 
 ### 16.1 Glossary
+
 | Term | Definition |
 |------|------------|
 | **SME** | Small and Medium Enterprise |

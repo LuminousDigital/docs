@@ -52,6 +52,7 @@ Launch a functional payment gateway that enables:
 - Next-day settlement to merchant bank accounts
 
 ### 1.3 Success Metrics
+
 | Metric | Target |
 |--------|--------|
 | Payment Success Rate | > 95% |

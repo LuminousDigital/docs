@@ -4,6 +4,7 @@
 ---
 
 ## Document Information
+
 | Field | Details |
 |-------|---------|
 | **Project Name** | altpay Payment Gateway |
@@ -687,6 +688,7 @@ Content-Type: application/json
 | `API_ERROR` | 500 | Internal server error |
 
 #### Card Decline Codes
+
 | Code | Description | Suggested Action |
 |------|-------------|------------------|
 | `insufficient_funds` | Card has insufficient funds | Try different card |
@@ -767,6 +769,7 @@ As a payment service provider, altpay must achieve **PCI DSS Level 1 compliance*
 ### 6.2 Data Security & Encryption
 
 #### Encryption Standards
+
 | Data Type | At Rest | In Transit | Storage |
 |-----------|---------|------------|--------|
 | **Card Numbers (PAN)** | AES-256-GCM | TLS 1.3 | Tokenized only |
@@ -820,6 +823,7 @@ sequenceDiagram
 ```
 
 #### Token Types
+
 | Token Type | Prefix | Validity | Use Case |
 |------------|--------|----------|----------|
 | **Single-use Token** | `tok_` | 15 minutes | One-time payment |
@@ -1050,6 +1054,7 @@ $isValid = Altpay\Webhook::verify($payload, $signature, $secret);
 ```
 
 #### Webhook Delivery & Retry
+
 | Attempt | Delay | Total Time |
 |---------|-------|------------|
 | 1 | Immediate | 0 |
@@ -1065,6 +1070,7 @@ $isValid = Altpay\Webhook::verify($payload, $signature, $secret);
 altpay provides official SDKs for easy integration:
 
 #### Official SDKs
+
 | Language | Package | Installation |
 |----------|---------|--------------|
 | **PHP** | `altpay/altpay-php` | `composer require altpay/altpay-php` |
