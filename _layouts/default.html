@@ -38,20 +38,34 @@
     .markdown-body table {
       border-collapse: collapse;
       width: 100%;
+      display: table;
+      overflow-x: auto;
     }
     
     .markdown-body table th,
     .markdown-body table td {
       border: 1px solid #30363d;
       padding: 8px 12px;
+      text-align: left;
     }
     
     .markdown-body table th {
       background-color: #161b22;
+      font-weight: 600;
     }
     
     .markdown-body table tr:nth-child(even) {
       background-color: #161b22;
+    }
+    
+    .markdown-body table tr:nth-child(odd) {
+      background-color: #0d1117;
+    }
+
+    /* Responsive table wrapper */
+    .markdown-body .table-wrapper {
+      overflow-x: auto;
+      margin: 16px 0;
     }
     
     .markdown-body code {
@@ -96,45 +110,77 @@
   <!-- Mermaid.js for diagram rendering -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'dark',
-      themeVariables: {
-        primaryColor: '#238636',
-        primaryTextColor: '#c9d1d9',
-        primaryBorderColor: '#30363d',
-        lineColor: '#8b949e',
-        secondaryColor: '#161b22',
-        tertiaryColor: '#21262d',
-        background: '#0d1117',
-        mainBkg: '#161b22',
-        secondBkg: '#0d1117',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif'
-      },
-      flowchart: {
-        htmlLabels: true,
-        curve: 'basis'
-      },
-      sequence: {
-        diagramMarginX: 50,
-        diagramMarginY: 10,
-        actorMargin: 50,
-        width: 150,
-        height: 65,
-        boxMargin: 10,
-        boxTextMargin: 5,
-        noteMargin: 10,
-        messageMargin: 35
-      },
-      gantt: {
-        titleTopMargin: 25,
-        barHeight: 20,
-        barGap: 4,
-        topPadding: 50,
-        leftPadding: 75,
-        gridLineStartPadding: 35,
-        fontSize: 11
-      }
+    // Convert code blocks with mermaid class to mermaid divs
+    document.addEventListener('DOMContentLoaded', function() {
+      // Find all code blocks that contain mermaid diagrams
+      const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre > code');
+      
+      codeBlocks.forEach(function(codeBlock) {
+        const content = codeBlock.textContent.trim();
+        // Check if it's a mermaid diagram
+        if (codeBlock.classList.contains('language-mermaid') || 
+            content.startsWith('graph ') || 
+            content.startsWith('flowchart ') || 
+            content.startsWith('sequenceDiagram') ||
+            content.startsWith('classDiagram') ||
+            content.startsWith('stateDiagram') ||
+            content.startsWith('erDiagram') ||
+            content.startsWith('gantt') ||
+            content.startsWith('pie') ||
+            content.startsWith('journey')) {
+          
+          const pre = codeBlock.parentElement;
+          const div = document.createElement('div');
+          div.className = 'mermaid';
+          div.textContent = content;
+          pre.parentNode.replaceChild(div, pre);
+        }
+      });
+
+      // Initialize mermaid after converting code blocks
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'dark',
+        themeVariables: {
+          primaryColor: '#238636',
+          primaryTextColor: '#c9d1d9',
+          primaryBorderColor: '#30363d',
+          lineColor: '#8b949e',
+          secondaryColor: '#161b22',
+          tertiaryColor: '#21262d',
+          background: '#0d1117',
+          mainBkg: '#161b22',
+          secondBkg: '#0d1117',
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif'
+        },
+        flowchart: {
+          htmlLabels: true,
+          curve: 'basis'
+        },
+        sequence: {
+          diagramMarginX: 50,
+          diagramMarginY: 10,
+          actorMargin: 50,
+          width: 150,
+          height: 65,
+          boxMargin: 10,
+          boxTextMargin: 5,
+          noteMargin: 10,
+          messageMargin: 35
+        },
+        gantt: {
+          titleTopMargin: 25,
+          barHeight: 20,
+          barGap: 4,
+          topPadding: 50,
+          leftPadding: 75,
+          gridLineStartPadding: 35,
+          fontSize: 11
+        }
+      });
+
+      // Re-run mermaid to render the converted divs
+      mermaid.run();
     });
   </script>
 </body>
