@@ -114,3 +114,5 @@ When adding new project documentation:
 ---
 
 **Growthverse Documentation Hub** | *Organized. Comprehensive. Accessible.*
+
+*Documentation authored by Balogun Abdulsamad, Engineering Team Lead*

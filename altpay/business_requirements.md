@@ -16,6 +16,7 @@ title: Business Requirements
 | **Version** | 1.0 |
 | **Date** | January 30, 2026 |
 | **Status** | Draft |
+| **Author** | Balogun Abdulsamad (Engineering Team Lead) |
 
 ---
 
